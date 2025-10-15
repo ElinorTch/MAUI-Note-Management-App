@@ -5,10 +5,15 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MAUI_Note_Management_App"
     Title="MAUI_Note_Management_App">
-
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <TabBar>
+        <ShellContent
+            Title="Notes"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Icon="icon_notes" />
+        <ShellContent
+             Title="A Propos"
+             ContentTemplate="{DataTemplate local:APropos}"
+             Icon="icon_about" />
+    </TabBar>
 
 </Shell>
