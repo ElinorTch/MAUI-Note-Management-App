@@ -1,14 +1,19 @@
+using System.Reflection;
+
 namespace MAUI_Note_Management_App.Views;
 
 public partial class APropos : ContentPage
 {
 	public APropos()
 	{
-		InitializeComponent();
+        InitializeComponent();
 	}
 
     private async void APropos_Clicked(object sender, EventArgs e)
     {
-        await Launcher.Default.OpenAsync("https://www.3il-ingenieurs.fr/");
+        if (BindingContext is Models.CAPropos apropos)
+        {
+            await Launcher.Default.OpenAsync(apropos.MoreInfoUrl);
+        }
     }
 }
