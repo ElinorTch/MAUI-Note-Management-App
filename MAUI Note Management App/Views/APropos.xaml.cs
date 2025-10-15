@@ -1,4 +1,4 @@
-namespace MAUI_Note_Management_App;
+namespace MAUI_Note_Management_App.Views;
 
 public partial class APropos : ContentPage
 {

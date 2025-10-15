@@ -3,17 +3,16 @@
     x:Class="MAUI_Note_Management_App.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:MAUI_Note_Management_App"
+    xmlns:view="clr-namespace:MAUI_Note_Management_App.Views"
     Title="MAUI_Note_Management_App">
     <TabBar>
         <ShellContent
-            Title="Notes"
-            ContentTemplate="{DataTemplate local:MainPage}"
-            Icon="icon_notes" />
-        <ShellContent
              Title="A Propos"
-             ContentTemplate="{DataTemplate local:APropos}"
+             ContentTemplate="{DataTemplate view:APropos}"
              Icon="icon_about" />
+        <ShellContent
+         Title="Notes"
+         ContentTemplate="{DataTemplate view:Note}"
+         Icon="icon_about" />   
     </TabBar>
-
 </Shell>
