@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36518.9 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAUI Note Management App", "MAUI Note Management App\MAUI Note Management App.csproj", "{6FCC7855-63DC-419E-A975-73D3845029F8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6FCC7855-63DC-419E-A975-73D3845029F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FCC7855-63DC-419E-A975-73D3845029F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FCC7855-63DC-419E-A975-73D3845029F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FCC7855-63DC-419E-A975-73D3845029F8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B956BDF2-9E32-454A-8EEF-37D1EFC1A31C}
+	EndGlobalSection
+EndGlobal
