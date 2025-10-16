@@ -5,16 +5,15 @@ namespace MAUI_Note_Management_App.Views;
 public partial class Note : ContentPage
 {
 
-    string _fileName = Path.Combine(FileSystem.AppDataDirectory, "notes.txt");
-
+    string _fileName = Path.Combine(FileSystem.AppDataDirectory, "123.notes.txt");
     public Note()
     {
         InitializeComponent();
         Debug.WriteLine(_fileName);
 
         string appDataPath = FileSystem.AppDataDirectory;
-        string sFileName = "notes.txt";
-        ChargerNote(Path.Combine(appDataPath, sFileName));
+        string sfileName = "123.notes.txt";
+        ChargerNote(Path.Combine(appDataPath,sfileName));
 
         if (File.Exists(_fileName))
             TextEditor.Text = File.ReadAllText(_fileName);

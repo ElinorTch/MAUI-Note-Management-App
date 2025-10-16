@@ -13,6 +13,10 @@
         <ShellContent
          Title="Notes"
          ContentTemplate="{DataTemplate view:Note}"
-         Icon="icon_about" />   
+         Icon="icon_about" />
+        <ShellContent
+ Title="Liste Notes"
+ ContentTemplate="{DataTemplate view:ListeNotes}"
+ Icon="icon_about" />
     </TabBar>
 </Shell>
