@@ -15,7 +15,8 @@
         <CollectionView x:Name="CollectionDeNotes"
  ItemsSource="{Binding CollNotes}"
  Margin="20"
-SelectionMode="Single">
+SelectionMode="Single"
+                        SelectionChanged="CollectionDeNotes_SelectionChanged" >
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />
             </CollectionView.ItemsLayout>

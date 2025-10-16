@@ -13,4 +13,21 @@ public partial class ListeNotes : ContentPage
     {
         await Shell.Current.GoToAsync(nameof(Note));
     }
+
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+        BindingContext = new Models.CListeNotes();
+    }
+
+    private async void CollectionDeNotes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        if (e.CurrentSelection.Count > 0)
+        {
+            var note = e.CurrentSelection.FirstOrDefault() as Models.CNote;
+            await Shell.Current.GoToAsync($"{nameof(Note)}?{nameof(Note.ItemId)}={note.Filename}");
+        }
+        CollectionDeNotes.SelectedItem = null;
+
+    }
 }

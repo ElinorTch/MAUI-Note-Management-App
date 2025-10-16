@@ -1,27 +1,36 @@
 using System.Diagnostics;
+using System.IO.Enumeration;
 
 namespace MAUI_Note_Management_App.Views;
+[QueryProperty(nameof(ItemId), nameof(ItemId))]
 
 public partial class Note : ContentPage
 {
+    static string fileName = $"{Path.GetRandomFileName()}.notes.txt";
+    string _fileName = Path.Combine(FileSystem.AppDataDirectory, fileName);
 
-    string _fileName = Path.Combine(FileSystem.AppDataDirectory, "123.notes.txt");
+    public string ItemId
+    {
+        set { ChargerNote(value); }
+    }
+
     public Note()
     {
         InitializeComponent();
         Debug.WriteLine(_fileName);
 
         string appDataPath = FileSystem.AppDataDirectory;
-        string sfileName = "123.notes.txt";
+        string sfileName = fileName;
         ChargerNote(Path.Combine(appDataPath,sfileName));
-
         if (File.Exists(_fileName))
             TextEditor.Text = File.ReadAllText(_fileName);
     }
 
-    private void SaveButton_Clicked(object sender, EventArgs e)
+    private async void SaveButton_Clicked(object sender, EventArgs e)
     {
-        File.WriteAllText(_fileName, TextEditor.Text);
+        if (BindingContext is Models.CNote note)
+            File.WriteAllText(note.Filename, TextEditor.Text);
+        await Shell.Current.GoToAsync("..");
     }
 
     private void DeleteButton_Clicked(object sender, EventArgs e)
@@ -35,7 +44,8 @@ public partial class Note : ContentPage
     private void ChargerNote(string fileName)
     {
         Models.CNote noteModel = new Models.CNote();
-        noteModel.Filename = fileName;
+        string appDataPath = FileSystem.AppDataDirectory;
+        noteModel.Filename = Path.Combine(appDataPath, fileName);
         if (File.Exists(fileName))
         {
             noteModel.Date = File.GetCreationTime(fileName);
