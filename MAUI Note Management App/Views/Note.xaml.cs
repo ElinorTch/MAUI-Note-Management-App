@@ -33,10 +33,11 @@ public partial class Note : ContentPage
         await Shell.Current.GoToAsync("..");
     }
 
-    private void DeleteButton_Clicked(object sender, EventArgs e)
+    private async void DeleteButton_Clicked(object sender, EventArgs e)
     {
-        if (File.Exists(_fileName))
-            File.Delete(_fileName);
+        if (BindingContext is Models.CNote note)
+            File.Delete(note.Filename);
+        await Shell.Current.GoToAsync("..");
         TextEditor.Text = string.Empty;
     }
 
