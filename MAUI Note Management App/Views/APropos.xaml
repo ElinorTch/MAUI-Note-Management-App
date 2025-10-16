@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Models="MAUI_Note_Management_App.Models"
+             xmlns:models="clr-namespace:MAUI_Note_Management_App.Models"
              x:Class="MAUI_Note_Management_App.Views.APropos"
              Title="APropos">
     <ContentPage.BindingContext>
@@ -15,6 +15,8 @@
 TextColor="{StaticResource Secondary}"/>
         <Label FontSize="22" Text="{Binding Version}" VerticalOptions="End"
 TextColor="{StaticResource Secondary}"/>
-        <Label Text="{Binding Message}" TextColor="{StaticResource Primary}"/>        <Button Text="En savoir plus sur 3iL" Clicked="APropos_Clicked" />
+        <Label Text="{Binding Message}" TextColor="{StaticResource Primary}"/>
+        <Button Text="En savoir plus sur 3iL" Clicked="APropos_Clicked" />
+
     </VerticalStackLayout>
 </ContentPage>

@@ -12,6 +12,10 @@ public partial class Note : ContentPage
         InitializeComponent();
         Debug.WriteLine(_fileName);
 
+        string appDataPath = FileSystem.AppDataDirectory;
+        string sFileName = "notes.txt";
+        ChargerNote(Path.Combine(appDataPath, sFileName));
+
         if (File.Exists(_fileName))
             TextEditor.Text = File.ReadAllText(_fileName);
     }
@@ -26,6 +30,19 @@ public partial class Note : ContentPage
         if (File.Exists(_fileName))
             File.Delete(_fileName);
         TextEditor.Text = string.Empty;
+    }
+
+
+    private void ChargerNote(string fileName)
+    {
+        Models.CNote noteModel = new Models.CNote();
+        noteModel.Filename = fileName;
+        if (File.Exists(fileName))
+        {
+            noteModel.Date = File.GetCreationTime(fileName);
+            noteModel.Text = File.ReadAllText(fileName);
+        }
+        BindingContext = noteModel;
     }
 
 }
